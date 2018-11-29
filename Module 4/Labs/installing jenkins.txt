@@ -1,0 +1,23 @@
+
+centos 7
+# yum install docker
+
+systemctl start docker
+
+docker pull jenkins/jenkins:lts
+
+docker run --detach --publish 8080:8080 --volume jenkins_home:/var/jenkins_home --name jenkins jenkins/jenkins:lts
+
+systemctl start jenkins
+
+Password:
+
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+Ubuntu :
+
+https://www.linkedin.com/learning/learning-jenkins/install-jenkins-on-ubuntu
+
+
+
+
